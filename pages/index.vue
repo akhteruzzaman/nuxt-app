@@ -9,7 +9,7 @@
 
 
         <div class="p-10">
-            <h1 class="text-3xl font-bold text-blue-600">Hello From DevExtreme with CI/CD</h1>
+            <h1 class="text-3xl font-bold text-blue-600">Hello From DevExtreme with CI/CD Pipeline</h1>
 
             <!-- DevExtreme Button -->
             <DxButton text="Click Me" @click="handleClick" class="mt-4" />
