@@ -27,7 +27,7 @@ export default [
       'vue/block-order': [
         'error',
         {
-          order: ['script', 'template', 'style'],
+          order: [['script', 'template'], 'style'],
         },
       ],
       'vue/block-lang': [

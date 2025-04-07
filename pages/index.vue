@@ -1,14 +1,9 @@
 <template>
-  <div>    
+  <div>
     <h1>Here is your playground</h1>
-
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>
