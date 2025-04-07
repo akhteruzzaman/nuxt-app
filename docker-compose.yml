@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  fdr-production:
+    build:
+      context: .
+      target: production
+    ports:
+      - '3001:3000' # Expose production on a different port
+    environment:
+      NODE_ENV: production
+    command: ['node', 'server/index.mjs']
+
+  fdr-development:
+    build:
+      context: .
+      target: development
+    ports:
+      - '3000:3000' # Expose development on the default port
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: development
+    command: ['npm', 'run', 'dev']
