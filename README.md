@@ -1,75 +1,44 @@
-# Nuxt Minimal Starter
+# Nuxt Docker Starter
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Docker Setup
 
-## Setup
+### Build Docker Image
 
-Make sure to install dependencies:
+To build the Docker image for production and development
 
 ```bash
-# npm
-npm install
+docker-compose build
+```
 
-# pnpm
-pnpm install
+### To run both dev and prod
 
-# yarn
+```bash
+docker-compose up
+```
+
+### Run Development Server
+
+To run the development server (port 3000):
+
+```bash
+docker-compose up fdr-development
+```
+
+### Run Production Server
+
+To run the production server (port 3001):
+
+```bash
+docker-compose up fdr-production
+```
+
+> **Note:** To run the latest production server, you must first build the system using the `docker build` command.
+
+### Run the system locally (not recommended)
+
+```bash
 yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
 yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+> **Note:** Please use yarn

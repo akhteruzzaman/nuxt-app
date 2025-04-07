@@ -4,17 +4,17 @@ FROM node:20-alpine AS builder
 # Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json to install dependencies
-COPY package*.json ./
+# Copy package.json and optionally package-lock.json and yarn.lock to install dependencies
+COPY package.json package-lock.json* yarn.lock* ./
 
 # Install dependencies
-RUN npm install
+RUN yarn install
 
 # Copy the rest of the project files
 COPY . .
 
 # Build the project
-RUN npm run build
+RUN yarn build
 
 # Stage 2: Production
 FROM node:20-alpine AS production
@@ -26,8 +26,8 @@ WORKDIR /app
 COPY --from=builder /app/.output ./
 
 # Install only production dependencies
-COPY package*.json ./
-RUN npm install --production
+COPY package.json package-lock.json* yarn.lock* ./
+RUN yarn install --production
 
 # Expose the port Nuxt runs on
 EXPOSE 3000
@@ -41,11 +41,11 @@ FROM node:20-alpine AS development
 # Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json to install dependencies
-COPY package*.json ./
+# Copy package.json and optionally package-lock.json and yarn.lock to install dependencies
+COPY package.json package-lock.json* yarn.lock* ./
 
 # Install dependencies
-RUN npm install
+RUN yarn install
 
 # Copy the rest of the project files
 COPY . .
@@ -54,4 +54,4 @@ COPY . .
 EXPOSE 3000
 
 # Start the application in development mode
-CMD ["npm", "run", "dev"]
+CMD ["yarn", "dev"]
