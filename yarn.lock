@@ -1734,7 +1734,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@8.29.0":
+"@typescript-eslint/eslint-plugin@8.29.0", "@typescript-eslint/eslint-plugin@^8.29.0":
   version "8.29.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-8.29.0.tgz#151c4878700a5ad229ce6713d2674d58b626b3d9"
   integrity sha512-PAIpk/U7NIS6H7TEtN45SPGLQaHNgB7wSjsQV/8+KYokAb2T/gloOA/Bee2yd4/yKVhPKe5LlaUGhAZk5zmSaQ==
@@ -3591,6 +3591,11 @@ escodegen@^2.0.0:
     esutils "^2.0.2"
   optionalDependencies:
     source-map "~0.6.1"
+
+eslint-plugin-unused-imports@^4.1.4:
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-unused-imports/-/eslint-plugin-unused-imports-4.1.4.tgz#62ddc7446ccbf9aa7b6f1f0b00a980423cda2738"
+  integrity sha512-YptD6IzQjDardkl0POxnnRBhU1OEePMV0nd6siHaRBbd+lyh6NAhFEobiznKU7kTsSsDeSD62Pe7kAM1b7dAZQ==
 
 eslint-plugin-vue@^10.0.0:
   version "10.0.0"
@@ -8180,6 +8185,11 @@ typescript-eslint@^8.29.0:
     "@typescript-eslint/eslint-plugin" "8.29.0"
     "@typescript-eslint/parser" "8.29.0"
     "@typescript-eslint/utils" "8.29.0"
+
+typescript@^5.8.3:
+  version "5.8.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.3.tgz#92f8a3e5e3cf497356f4178c34cd65a7f5e8440e"
+  integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 ufo@^1.1.2, ufo@^1.5.4:
   version "1.5.4"
