@@ -24,6 +24,13 @@ export default [
     },
     rules: {
       'vue/multi-word-component-names': 'off',
+      "vue/block-order": ["error", {
+        "order": [ "script", "template" , "style"],
+      }],
+      "vue/block-lang": ["error", {
+        "script": { "lang": "ts"}
+      }],
+      "vue/define-props-declaration": ["error", "type-based"],
       'unused-imports/no-unused-imports': 'error',
       'unused-imports/no-unused-vars': [
         'warn',
@@ -34,7 +41,9 @@ export default [
           argsIgnorePattern: '^_',
         },
       ],
-      '@typescript-eslint/no-unused-vars': ['error'], // <-- requires plugin import
+      '@typescript-eslint/no-unused-vars': ['error'],
+      '@typescript-eslint/no-explicit-any': 'error',
+      "no-console": "error",
     },
   },
 ];
