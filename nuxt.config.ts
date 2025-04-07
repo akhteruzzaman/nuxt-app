@@ -8,5 +8,5 @@ export default defineNuxtConfig({
   build: {
     transpile: ['devextreme-vue'],
   },
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt']
-})
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt'],
+});
