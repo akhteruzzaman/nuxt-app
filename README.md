@@ -1,75 +1,142 @@
-# Nuxt Minimal Starter
+# Nuxt Docker Starter
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Docker Setup
 
-## Setup
+### Build Docker Image
 
-Make sure to install dependencies:
+To build the Docker image for production and development
 
 ```bash
-# npm
-npm install
+docker-compose build
+```
 
-# pnpm
-pnpm install
+To run both production and development
 
-# yarn
+```bash
+docker-compose up
+```
+
+### Install packages locally
+
+```bash
 yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+### Run Development Server
 
-Start the development server on `http://localhost:3000`:
+To run the development server (port 3000):
 
 ```bash
-# npm
-npm run dev
+docker-compose up fdr-development
+```
 
-# pnpm
-pnpm dev
+### Run Production Server
 
-# yarn
+To run the production server (port 3001):
+
+```bash
+docker-compose up fdr-production
+```
+
+> **Note:** To run the latest production server, you must first build the system using the `docker build` command.
+
+### Run the system locally (not recommended)
+
+```bash
+yarn install
 yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+> **Note:** Please use yarn
 
-Build the application for production:
+## Linting Rules
+
+This project uses ESLint and Prettier for linting and code formatting. Below are the key linting rules and configurations:
+
+### ESLint
+
+- **Enforces Code Quality:** Ensures consistent code quality and catches potential errors.
+- **Key Rules:**
+  - No unused variables (`no-unused-vars`).
+  - Consistent use of semicolons (`semi`).
+  - Enforces single quotes for strings (`quotes`).
+  - Disallows `console.log` in production (`no-console`).
+
+#### Vue-Specific Rules
+
+- **Template Rules:**
+  - Enforces self-closing tags in templates where possible (`vue/html-self-closing`).
+  - Requires consistent spacing in template attributes (`vue/attribute-hyphenation`).
+- **Script Rules:**
+  - Enforces PascalCase for component names (`vue/component-name-in-template-casing`).
+  - Disallows unused components (`vue/no-unused-components`).
+  - Requires `prop` definitions to have a type (`vue/require-prop-types`).
+
+### Prettier
+
+- **Code Formatting:** Automatically formats code to maintain consistency.
+- **Key Rules:**
+  - Line width: 80 characters.
+  - Use of single quotes.
+  - Trailing commas where valid in ES5 (`es5`).
+  - Tabs for indentation.
+
+### Running Linting
+
+To check for linting errors, run:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+yarn lint
 ```
 
-Locally preview production build:
+To automatically fix linting issues, run:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+yarn lint --fix
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+> **Note:** Ensure that linting is run before committing code to maintain code quality.
+
+### Writing `.vue` Files
+
+When creating `.vue` files, follow this sequence for better readability and maintainability:
+
+1. **`<script>` Section**:
+
+   - Place the `<script>` section at the top.
+   - Use the `setup` syntax if applicable.
+   - Must define lang="ts"
+   - Define all logic, imports, and reactive data here.
+
+2. **`<template>` Section**:
+
+   - Place the `<template>` section after the `<script>` section.
+   - Use clean and semantic HTML.
+   - Ensure proper indentation and self-closing tags where applicable.
+
+3. **`<style>` Section**:
+   - Place the `<style>` section at the bottom.
+   - Use scoped styles (`<style scoped>`) to avoid global CSS conflicts.
+   - Follow the project's CSS conventions (e.g., BEM, Tailwind, etc.).
+
+### Example `.vue` File
+
+```vue
+<script setup lang="ts">
+// your code here
+</script>
+
+<template>
+  <div class="example-component">
+    <p>{{ message }}</p>
+  </div>
+</template>
+
+<style scoped>
+.example-component {
+  color: blue;
+}
+</style>
+```
+
+> **Note:** Always maintain this sequence to ensure consistency across the project.
