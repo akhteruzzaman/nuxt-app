@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy package.json and optionally package-lock.json and yarn.lock to install dependencies
 COPY package.json package-lock.json* yarn.lock* ./
 
+# Copy the .env file
+COPY .env ./
+
 # Install dependencies
 RUN yarn install
 
@@ -25,6 +28,9 @@ WORKDIR /app
 # Copy only the necessary files from the build stage
 COPY --from=builder /app/.output ./
 
+# Copy the .env file
+COPY .env ./
+
 # Install only production dependencies
 COPY package.json package-lock.json* yarn.lock* ./
 RUN yarn install --production
@@ -41,8 +47,14 @@ FROM node:20-alpine AS development
 # Set the working directory
 WORKDIR /app
 
+# Install bash
+RUN apk add --no-cache bash
+
 # Copy package.json and optionally package-lock.json and yarn.lock to install dependencies
 COPY package.json package-lock.json* yarn.lock* ./
+
+# Copy the .env file
+COPY .env ./
 
 # Install dependencies
 RUN yarn install
