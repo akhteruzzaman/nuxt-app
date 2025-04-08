@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Here is your playground</h1>
+    <h1>{{ $t('welcome') }}</h1>
+    <p>{{ $t('description') }}</p>
   </div>
 </template>
 
