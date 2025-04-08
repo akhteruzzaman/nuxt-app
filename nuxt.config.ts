@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   css: [
     'devextreme/dist/css/dx.light.css', // Change the theme if needed
   ],
+  ssr: false,
   build: {
     transpile: ['devextreme-vue'],
   },

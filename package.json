@@ -13,6 +13,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "^9.5.3",
     "@pinia/nuxt": "^0.10.1",
     "devextreme": "^24.2.6",
     "devextreme-vue": "^24.2.6",
