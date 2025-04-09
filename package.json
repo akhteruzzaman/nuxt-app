@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare",
     "test": "jest",
     "lint": "eslint . --ext .js,.vue,.ts",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.10.1",
