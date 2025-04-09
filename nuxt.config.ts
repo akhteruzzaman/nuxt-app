@@ -1,12 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { publicRuntimeConfig } from "./server-config/environments/public";
 import { privateRuntimeConfig } from "./server-config/environments/private";
-import enLocaleFiles from "./configs/locales/en";
-import msLocaleFiles from "./configs/locales/ms";
+import enLocaleFiles from "./src/configs/locales/en";
+import msLocaleFiles from "./src/configs/locales/ms";
 
 const setDefaultLanguage = process.env.NODE_ENV === "production" ? "ms" : "en";
 
 export default defineNuxtConfig({
+  srcDir: 'src/',
   compatibilityDate: "2024-11-01",
   devtools: { enabled: false },
   css: [
