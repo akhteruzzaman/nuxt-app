@@ -57,10 +57,10 @@ COPY package.json ./
 COPY ./mocks ./mocks
 
 # Expose port for mock server
-EXPOSE 3001
+EXPOSE 3003
 
 # Start the mock server
-CMD ["json-server", "--watch", "./mocks/db.json", "--host", "0.0.0.0", "--port", "3001"]
+CMD ["json-server", "--watch", "./mocks/db.json", "--host", "0.0.0.0", "--port", "3003"]
 
 # Stage 3: Development (optional)
 FROM node:20-alpine AS development

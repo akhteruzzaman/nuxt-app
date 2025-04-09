@@ -4,11 +4,12 @@
   "description": "Mock server for API requests",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2"
   },
   "devDependencies": {

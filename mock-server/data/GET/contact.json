@@ -1,0 +1,72 @@
+[
+  {
+    "contact_id": 1,
+    "full_name": "John Doe",
+    "phone_number": "123-456-7890",
+    "email_address": "john.doe@example.com",
+    "is_active": true
+  },
+  {
+    "contact_id": 2,
+    "full_name": "Jane Smith",
+    "phone_number": "987-654-3210",
+    "email_address": "jane.smith@example.com",
+    "is_active": false
+  },
+  {
+    "contact_id": 3,
+    "full_name": "Alice Johnson",
+    "phone_number": "555-123-4567",
+    "email_address": "alice.johnson@example.com",
+    "is_active": true
+  },
+  {
+    "contact_id": 4,
+    "full_name": "Bob Brown",
+    "phone_number": "444-987-6543",
+    "email_address": "bob.brown@example.com",
+    "is_active": false
+  },
+  {
+    "contact_id": 5,
+    "full_name": "Charlie Davis",
+    "phone_number": "333-222-1111",
+    "email_address": "charlie.davis@example.com",
+    "is_active": true
+  },
+  {
+    "contact_id": 6,
+    "full_name": "Diana Evans",
+    "phone_number": "222-333-4444",
+    "email_address": "diana.evans@example.com",
+    "is_active": false
+  },
+  {
+    "contact_id": 7,
+    "full_name": "Ethan Harris",
+    "phone_number": "111-444-5555",
+    "email_address": "ethan.harris@example.com",
+    "is_active": true
+  },
+  {
+    "contact_id": 8,
+    "full_name": "Fiona Green",
+    "phone_number": "666-777-8888",
+    "email_address": "fiona.green@example.com",
+    "is_active": false
+  },
+  {
+    "contact_id": 9,
+    "full_name": "George Hill",
+    "phone_number": "999-888-7777",
+    "email_address": "george.hill@example.com",
+    "is_active": true
+  },
+  {
+    "contact_id": 10,
+    "full_name": "Hannah King",
+    "phone_number": "777-666-5555",
+    "email_address": "hannah.king@example.com",
+    "is_active": false
+  }
+]
