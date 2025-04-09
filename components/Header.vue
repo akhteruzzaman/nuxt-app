@@ -9,14 +9,14 @@
 </template>
 
 <script setup lang="ts">
-import { DxToolbar, DxItem } from 'devextreme-vue/toolbar';
+import { DxToolbar, DxItem } from "devextreme-vue/toolbar";
 
 const menuButtonOptions = {
-  icon: 'menu',
+  icon: "menu",
 };
 
 const profileButtonOptions = {
-  icon: 'user', 
+  icon: "user",
 };
 </script>
 

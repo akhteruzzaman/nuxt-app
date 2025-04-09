@@ -5,12 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import { DxList } from 'devextreme-vue/list';
+import { DxList } from "devextreme-vue/list";
 
-const menuItems = [
-  { text: 'Home' },
-  { text: 'About' }, 
-];
+const menuItems = [{ text: "Home" }, { text: "About" }];
 </script>
 
 <style scoped>
