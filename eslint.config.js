@@ -5,7 +5,7 @@ import tseslint from "@typescript-eslint/eslint-plugin";
 
 export default [
   {
-    ignores: [".nuxt/**/*"],
+    ignores: [".nuxt/**/*", "types/devextreme-vue.d.ts"],
   },
   {
     files: ["**/*.vue"],
