@@ -41,6 +41,27 @@ EXPOSE 3000
 # Start the application in production mode
 CMD ["node", "server/index.mjs"]
 
+# Stage 4: Mock Server
+FROM node:20-alpine AS mockserver
+
+# Set the working directory
+WORKDIR /app
+
+# Install json-server for API mocking
+RUN yarn global add json-server
+
+# Copy package.json for any dependencies
+COPY package.json ./
+
+# Copy mock data directory or create it if needed
+COPY ./mocks ./mocks
+
+# Expose port for mock server
+EXPOSE 3001
+
+# Start the mock server
+CMD ["json-server", "--watch", "./mocks/db.json", "--host", "0.0.0.0", "--port", "3001"]
+
 # Stage 3: Development (optional)
 FROM node:20-alpine AS development
 

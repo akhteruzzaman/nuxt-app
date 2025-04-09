@@ -1,0 +1,54 @@
+{
+  "result": {
+    "invested": {
+      "amount_in_cents": 25000,
+      "currency": "GBP"
+    },
+    "current_share_price": {
+      "amount_in_cents": 2000,
+      "currency": "GBP"
+    },
+    "current_value": {
+      "amount_in_cents": 100000,
+      "currency": "GBP"
+    },
+    "drawdown_amount": {
+      "amount_in_cents": 250,
+      "currency": "GBP"
+    },
+    "investment_performance": "300.00",
+    "investment_states": [""],
+    "number_of_shares": "50.00",
+    "business": {
+      "id": 12388,
+      "slug": "loyalzoo",
+      "summary": "Digital loyalty card service for SME retailers and eateries",
+      "cohort": {
+        "id": 35446,
+        "name": "Republic"
+      },
+      "current_valuation": {
+        "amount_in_cents": 676352000,
+        "currency": "GBP"
+      },
+      "is_raising": false,
+      "linked_businesses": [],
+      "logo_location": "https://assets-14004.seedrs-staging.com/uploads/business/logo/12388/9aywsldpphxjmqg07oxtceq1q99wjqu/app_icon_512.png",
+      "name": "Loyalzoo",
+      "performance": "300.0",
+      "secondary_market": {
+        "available_shares": {
+          "amount_in_cents": 557880,
+          "currency": "GBP"
+        },
+        "eligible": true,
+        "last_trading_cycle_amount_sold": {
+          "amount_in_cents": 142800,
+          "currency": "GBP"
+        }
+      },
+      "state": "active",
+      "live_campaign": {}
+    }
+  }
+}
