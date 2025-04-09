@@ -7,7 +7,7 @@ import msLocaleFiles from "./src/configs/locales/ms";
 const setDefaultLanguage = process.env.NODE_ENV === "production" ? "ms" : "en";
 
 export default defineNuxtConfig({
-  srcDir: 'src/',
+  srcDir: "src/",
   compatibilityDate: "2024-11-01",
   devtools: { enabled: false },
   css: [
