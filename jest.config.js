@@ -1,8 +1,8 @@
 export default {
-  moduleFileExtensions: ['js', 'json', 'vue'],
+  moduleFileExtensions: ["js", "json", "vue"],
   transform: {
-    '^.+\\.vue$': 'vue-jest',
-    '^.+\\.js$': 'babel-jest',
+    "^.+\\.vue$": "vue-jest",
+    "^.+\\.js$": "babel-jest",
   },
-  testEnvironment: 'jsdom',
+  testEnvironment: "jsdom",
 };

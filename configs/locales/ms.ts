@@ -1,1 +1,1 @@
-export default ['ms/about.json', 'ms/landing.json'];
+export default ["ms/about.json", "ms/landing.json"];
