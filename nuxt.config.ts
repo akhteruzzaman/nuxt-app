@@ -1,6 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { publicRuntimeConfig } from './server-config/environments/public';
 import { privateRuntimeConfig } from './server-config/environments/private';
+import enLocaleFiles from './configs/locales/en';
+import msLocaleFiles from './configs/locales/ms';
 
 const setDefaultLanguage = process.env.NODE_ENV === "production" ? "ms" : 'en';
 
@@ -24,13 +26,24 @@ export default defineNuxtConfig({
   },
   i18n: {
     locales: [
-      { code: 'en', iso: 'en-US', file: 'en/landing.json' },
-      { code: 'ms', iso: 'ms-MY', file: 'ms/landing.json' },
+      {
+        code: 'en',
+        iso: 'en-US',
+        files: enLocaleFiles
+      },
+      {
+        code: 'ms',
+        iso: 'ms-MY',
+        files: msLocaleFiles
+      },
     ],
     defaultLocale: setDefaultLanguage,
-    langDir: 'locals/',
+    langDir: 'locales/',
     lazy: true,
-    strategy: 'no_prefix', // Disable locale prefix in the URL
-    detectBrowserLanguage: false
+    strategy: 'no_prefix',
+    detectBrowserLanguage: false,
+    bundle: {
+      optimizeTranslationDirective: false, // Disable this feature as recommended
+    }
   },
 });
