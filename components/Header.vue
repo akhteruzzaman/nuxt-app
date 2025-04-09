@@ -8,21 +8,15 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { DxToolbar, DxItem } from 'devextreme-vue/toolbar';
 
 const menuButtonOptions = {
   icon: 'menu',
-  onClick: () => {
-    console.log('Menu clicked');
-  },
 };
 
 const profileButtonOptions = {
-  icon: 'user',
-  onClick: () => {
-    console.log('Profile clicked');
-  },
+  icon: 'user', 
 };
 </script>
 

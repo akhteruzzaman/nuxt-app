@@ -4,7 +4,7 @@
   </aside>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { DxList } from 'devextreme-vue/list';
 
 const menuItems = [
