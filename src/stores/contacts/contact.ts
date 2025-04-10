@@ -5,7 +5,7 @@ import type { ContactActions, ContactState } from "./types/types";
 export const useContactStore = defineStore<"contact", ContactState, {}, ContactActions>("contact", {
   state: () => ({
     contacts: [],
-    filteredContact: {},
+    filteredContact: [],
     loading: false,
   }),
   actions: {
@@ -21,11 +21,11 @@ export const useContactStore = defineStore<"contact", ContactState, {}, ContactA
     resetContacts() {
       this.contacts = [];
     },
-    getFilteredContact(contact: GetContact) {
+    getFilteredContact(contact: GetContact[]) {
       this.filteredContact = contact;
     },
     resetFilterContact() {
-      this.filteredContact = {};
+      this.filteredContact = [];
     },
   },
 });

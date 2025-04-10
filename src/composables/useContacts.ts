@@ -9,20 +9,18 @@ export const useContacts = (): {
   getContacts: () => Promise<void>;
   loading: Ref<boolean>;
   contacts: Ref<GetContact[] | []>;
-  filteredContact: GetContact | {};
+  resetContacts: () => Promise<void>;
+  filteredContact: Ref<GetContact[] | []>;
 } => {
   const contactStore = useContactStore();
-  const { setLoading, setContacts, getFilteredContact, filteredContact, resetFilterContact } =
-    contactStore;
-  const { contacts, loading } = storeToRefs(contactStore);
+  const { setLoading, setContacts, getFilteredContact } = contactStore;
+  const { contacts, loading, filteredContact } = storeToRefs(contactStore);
 
   const searchContacts = async (params: ContactSearchParams): Promise<void> => {
     try {
       setLoading(true);
-      // Reset filtered contacts before performing a new search
-      resetFilterContact();
       const result = await contactApi.contactSearch(params);
-      getFilteredContact(result);
+      getFilteredContact(result); // Ensure this updates the reactive state
     } catch (error) {
       console.error("Error searching contacts:", error); // handle error appropriately
     } finally {
@@ -42,11 +40,24 @@ export const useContacts = (): {
     }
   };
 
+  // create reset contact
+  const resetContacts = async (): Promise<void> => {
+    try {
+      setLoading(true);
+      setContacts([]);
+    } catch (error) {
+      console.error("Error resetting contacts:", error); // handle error appropriately
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return {
     searchContacts,
     getContacts,
     loading,
     contacts,
+    resetContacts,
     filteredContact,
   };
 };

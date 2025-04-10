@@ -10,13 +10,11 @@
         <DxSimpleItem
           dataField="name"
           label="Name"
-          :isRequired="true"
           editorOptions="{ validationRules: [{ type: 'required', message: 'Name is required' }] }"
         />
         <DxSimpleItem
           dataField="email"
           label="Email"
-          :isRequired="true"
           editorOptions="{ validationRules: [{ type: 'email', message: 'Enter a valid email' }] }"
         />
         <DxSimpleItem dataField="isActive" editorType="dxCheckBox" label="Active" />
@@ -30,28 +28,6 @@
           }"
         />
       </DxForm>
-
-      <!-- Display filtered contact result if available -->
-      <div
-        v-if="filteredContact && filteredContact.length > 0"
-        class="w-full mt-4 p-3 bg-gray-50 rounded-md border border-gray-200"
-      >
-        <h3 class="font-medium text-gray-700 mb-2">Search Results</h3>
-        <div
-          v-for="(contact, index) in filteredContact"
-          :key="index"
-          class="mb-3 pb-3 border-b border-gray-200 last:border-b-0 last:mb-0 last:pb-0"
-        >
-          <div class="grid grid-cols-2 gap-2">
-            <div><span class="font-semibold">Name:</span> {{ contact.fullName }}</div>
-            <div><span class="font-semibold">Email:</span> {{ contact.emailAddress }}</div>
-            <div class="col-span-2">
-              <span class="font-semibold">Status:</span>
-              <span v-html="renderStatus({ value: contact.isActive })"></span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div v-if="loading" class="text-center text-gray-500">
@@ -59,7 +35,7 @@
     </div>
     <div v-else>
       <DxDataGrid
-        :dataSource="contacts"
+        :dataSource="filteredContact"
         :allowColumnResizing="true"
         :columnAutoWidth="true"
         :rowAlternationEnabled="true"
@@ -99,7 +75,7 @@ import { useContacts } from "@/composables/useContacts";
 import DxDataGrid, { DxColumn, DxPager, DxPaging } from "devextreme-vue/data-grid";
 import DxForm, { DxSimpleItem, DxButtonItem } from "devextreme-vue/form";
 
-const { getContacts, contacts, loading, searchContacts, filteredContact } = useContacts();
+const { getContacts, loading, searchContacts, filteredContact } = useContacts();
 
 const formData = reactive({
   name: "",
