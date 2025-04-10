@@ -1,0 +1,54 @@
+{
+  "result": {
+    "invested": {
+      "amount_in_cents": 25000,
+      "currency": "GBP"
+    },
+    "current_share_price": {
+      "amount_in_cents": 3,
+      "currency": "GBP"
+    },
+    "current_value": {
+      "amount_in_cents": 93942,
+      "currency": "GBP"
+    },
+    "drawdown_amount": {
+      "amount_in_cents": 250,
+      "currency": "GBP"
+    },
+    "investment_performance": "275.77",
+    "investment_states": [""],
+    "number_of_shares": "25000.00",
+    "business": {
+      "id": 11105,
+      "slug": "ee-bria",
+      "summary": "Innovative online beer distributor for pubs, bars and restaurants.",
+      "cohort": {
+        "id": 35446,
+        "name": "Republic"
+      },
+      "current_valuation": {
+        "amount_in_cents": 537082981,
+        "currency": "GBP"
+      },
+      "is_raising": false,
+      "linked_businesses": [],
+      "logo_location": "https://assets-14004.seedrs-staging.com/uploads/business/logo/11105/dlzpxluue59qlbfsunhj7xanngjwnwe/tradelogo_square.jpeg",
+      "name": "EeBria",
+      "performance": "275.8",
+      "secondary_market": {
+        "available_shares": {
+          "amount_in_cents": 1202463,
+          "currency": "GBP"
+        },
+        "eligible": false,
+        "last_trading_cycle_amount_sold": {
+          "amount_in_cents": 0,
+          "currency": "GBP"
+        }
+      },
+      "state": "active",
+      "live_campaign": {}
+    }
+  }
+}

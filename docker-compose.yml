@@ -23,3 +23,14 @@ services:
     environment:
       NODE_ENV: development
     command: ["npm", "run", "dev"]
+
+  mock-server:
+    image: node:20-alpine
+    working_dir: /app
+    ports:
+      - "3003:3003"
+    volumes:
+      - ./mock-server:/app
+    environment:
+      NODE_ENV: development
+    command: sh -c "npm install && npm start"

@@ -9,7 +9,7 @@ const setDefaultLanguage = process.env.NODE_ENV === "production" ? "ms" : "en";
 export default defineNuxtConfig({
   srcDir: "src/",
   compatibilityDate: "2024-11-01",
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   css: [
     "devextreme/dist/css/dx.light.css", // Change the theme if needed
   ],
