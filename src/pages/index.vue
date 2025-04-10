@@ -2,7 +2,7 @@
   <div>
     <div class="flex h-screen">
       <!-- Sidebar -->
-      <div class="w-64 bg-white border-r border-gray-200">
+      <div class="w-64 bg-white">
         <!-- User Info -->
         <div class="p-4 border-b border-gray-200 text-center">
           <h2 class="font-bold text-sm text-gray-500">AHMAD BIN ABU BAKAR</h2>
@@ -13,49 +13,36 @@
         </div>
 
         <!-- Menu -->
+
         <div class="py-2">
           <div class="px-4 py-2 text-sm text-gray-500">MENU</div>
-
-          <!-- Menu Items -->
-          <div class="bg-indigo-100 text-indigo-700 border-l-4 border-indigo-500 mx-2 rounded-md">
-            <a href="#" class="flex items-center px-4 py-3">
-              <span class="mr-2 text-indigo-600">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
-                  />
-                </svg>
-              </span>
-              Utama
-            </a>
-          </div>
-
-          <a href="#" class="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-100">
-            <span class="mr-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
+          <PerfectScrollbar class="ps">
+            <!-- Menu Items -->
+            <div class="relative mx-2 rounded-md">
+              <a
+                href="#"
+                class="flex items-center px-4 py-3 bg-indigo-100 text-indigo-700 rounded-md mr-3"
               >
-                <path
-                  d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-                />
-              </svg>
-            </span>
-            Dashboard
-          </a>
+                <span class="mr-2 text-indigo-600">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                    />
+                  </svg>
+                </span>
+                Utama
+              </a>
+              <div
+                class="absolute right-0 top-1/2 transform -translate-y-1/2 w-1 bg-indigo-500 rounded-l-md h-[50px]"
+              />
+            </div>
 
-          <a
-            href="#"
-            class="flex items-center justify-between px-6 py-3 text-gray-700 hover:bg-gray-100"
-          >
-            <div class="flex items-center">
+            <a href="#" class="flex items-center px-6 py-3 text-gray-700 hover:bg-indigo-100">
               <span class="mr-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -64,111 +51,137 @@
                   fill="currentColor"
                 >
                   <path
-                    d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z"
+                    d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
                   />
-                  <path d="M3 8a2 2 0 012-2h2a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
                 </svg>
               </span>
-              Profil Pembelajaran Dan Peperiksaan
+              Dashboard
+            </a>
+
+            <a
+              href="#"
+              class="flex items-center justify-between px-6 py-3 text-gray-700 hover:bg-indigo-100"
+              @click.prevent="isProfilOpen = !isProfilOpen"
+            >
+              <div class="flex items-center">
+                <span class="mr-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z"
+                    />
+                    <path d="M3 8a2 2 0 012-2h2a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+                  </svg>
+                </span>
+                Profil Pembelajaran Dan Peperiksaan
+              </div>
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </a>
+            <div v-if="isProfilOpen" class="ml-6">
+              <a href="#" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100">Test 1</a>
+              <a href="#" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100">Test 2</a>
             </div>
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4"
-                viewBox="0 0 20 20"
-                fill="currentColor"
+
+            <div class="bg-gray-100">
+              <a
+                href="#"
+                class="flex items-center justify-between px-6 py-3 text-gray-700 hover:bg-indigo-100"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </span>
-          </a>
-
-          <div class="bg-gray-100">
-            <a
-              href="#"
-              class="flex items-center justify-between px-6 py-3 text-gray-700 hover:bg-gray-100"
-            >
-              <div class="flex items-center">
-                <span class="mr-2">
+                <div class="flex items-center">
+                  <span class="mr-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
+                      />
+                    </svg>
+                  </span>
+                  Rekod dan Peperiksaan
+                </div>
+                <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
+                    class="h-4 w-4"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
                     <path
-                      d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
                     />
                   </svg>
                 </span>
-                Rekod dan Peperiksaan
-              </div>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </span>
+              </a>
+            </div>
+
+            <a href="#" class="flex items-center px-6 py-3 text-gray-700 hover:bg-indigo-100 ml-6">
+              Rekod Peperiksaan
             </a>
-          </div>
 
-          <a href="#" class="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-100 ml-6">
-            Rekod Peperiksaan
-          </a>
-
-          <div class="bg-gray-100">
-            <a
-              href="#"
-              class="flex items-center justify-between px-6 py-3 text-gray-700 hover:bg-gray-100"
-            >
-              <div class="flex items-center">
-                <span class="mr-2">
+            <div class="bg-gray-100">
+              <a
+                href="#"
+                class="flex items-center justify-between px-6 py-3 text-gray-700 hover:bg-indigo-100"
+              >
+                <div class="flex items-center">
+                  <span class="mr-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
+                      />
+                    </svg>
+                  </span>
+                  Rekod dan Peperiksaan
+                </div>
+                <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
+                    class="h-4 w-4"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
                     <path
-                      d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
                     />
                   </svg>
                 </span>
-                Rekod dan Peperiksaan
-              </div>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </span>
-            </a>
-          </div>
+              </a>
+            </div>
+          </PerfectScrollbar>
         </div>
       </div>
 
       <!-- Main Content -->
-      <div class="flex-1 flex flex-col overflow-hidden">
+      <div class="flex-1 flex flex-col">
         <!-- Top Navigation -->
         <header class="bg-white border-b border-gray-200 p-4 flex justify-end">
           <div class="flex items-center space-x-3">
@@ -224,9 +237,31 @@
               </svg>
             </div>
             <div
-              class="w-10 h-10 rounded-md bg-blue-100 flex items-center justify-center text-blue-600 font-bold"
+              class="w-10 h-10 rounded-md bg-blue-100 flex items-center justify-center text-blue-600 font-bold relative"
+              @click="isPopoverOpen = !isPopoverOpen"
             >
               HRMIS
+              <div
+                v-if="isPopoverOpen"
+                class="absolute top-12 right-0 bg-white shadow-lg rounded-lg p-4 w-[400px] h-[500px] overflow-y-auto z-40"
+              >
+                <div class="grid grid-cols-4 gap-4">
+                  <div
+                    v-for="(item, index) in popoverItems"
+                    :key="index"
+                    class="flex flex-col items-center cursor-pointer"
+                    :class="{ 'bg-blue-100': focusedItem === index }"
+                    @click="focusedItem = index"
+                  >
+                    <div
+                      class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden"
+                    >
+                      <img :src="item.icon" alt="icon" class="w-full h-full object-cover" />
+                    </div>
+                    <p class="text-sm text-center mt-2">{{ item.text }}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </header>
@@ -392,6 +427,41 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { PerfectScrollbar } from "vue3-perfect-scrollbar";
+import { ref } from "vue";
 
-<style scoped></style>
+const isProfilOpen = ref(false);
+const isPopoverOpen = ref(false);
+const focusedItem = ref<number | null>(null);
+const popoverItems = ref([
+  { icon: "https://via.placeholder.com/32", text: "Item 1" },
+  { icon: "https://via.placeholder.com/32", text: "Item 2" },
+  { icon: "https://via.placeholder.com/32", text: "Item 3" },
+  { icon: "https://via.placeholder.com/32", text: "Item 4" },
+  { icon: "https://via.placeholder.com/32", text: "Item 5" },
+  { icon: "https://via.placeholder.com/32", text: "Item 6" },
+  { icon: "https://via.placeholder.com/32", text: "Item 7" },
+  { icon: "https://via.placeholder.com/32", text: "Item 8" },
+  { icon: "https://via.placeholder.com/32", text: "Item 9" },
+  { icon: "https://via.placeholder.com/32", text: "Item 10" },
+  { icon: "https://via.placeholder.com/32", text: "Item 11" },
+  { icon: "https://via.placeholder.com/32", text: "Item 12" },
+  { icon: "https://via.placeholder.com/32", text: "Item 13" },
+  { icon: "https://via.placeholder.com/32", text: "Item 14" },
+  { icon: "https://via.placeholder.com/32", text: "Item 15" },
+  { icon: "https://via.placeholder.com/32", text: "Item 16" },
+  { icon: "https://via.placeholder.com/32", text: "Item 17" },
+  { icon: "https://via.placeholder.com/32", text: "Item 18" },
+  { icon: "https://via.placeholder.com/32", text: "Item 19" },
+  { icon: "https://via.placeholder.com/32", text: "Item 20" },
+]);
+</script>
+
+<style scoped>
+@import "vue3-perfect-scrollbar/style.css";
+
+.ps {
+  max-height: 80vh; /* or height: 100px; */
+}
+</style>
