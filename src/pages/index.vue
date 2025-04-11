@@ -3,12 +3,12 @@
     <div class="flex h-screen">
       <!-- Sidebar -->
       <div class="w-64 bg-white">
-        <div class="p-4 border-b border-gray-200 text-center">
-          <h2 class="font-bold text-sm text-gray-500">AHMAD BIN ABU BAKAR</h2>
-          <p class="font-bold text-sm text-gray-500">PENOLONG TEKNOLOGI</p>
-          <p class="font-bold text-sm text-gray-500">MAKLUMAT</p>
-          <p class="font-bold text-sm text-gray-500">(GRED F29)</p>
-          <p class="font-bold text-sm text-blue-500 mt-2">10 April 2025, 06:50:32 PTG</p>
+        <div class="p-4 text-center">
+          <h2 class="text-sm text-gray-500">AHMAD BIN ABU BAKAR</h2>
+          <p class="text-sm text-gray-500">PENOLONG TEKNOLOGI</p>
+          <p class="text-sm text-gray-500">MAKLUMAT</p>
+          <p class="text-sm text-gray-500">(GRED F29)</p>
+          <p class="text-sm text-blue-500 mt-2">{{ currentTime }}</p>
         </div>
 
         <!-- Menu -->
@@ -65,7 +65,7 @@
       <!-- Main Content -->
       <div class="flex-1 flex flex-col">
         <!-- Top Navigation -->
-        <header class="bg-white border-b border-gray-200 p-4 flex justify-end">
+        <header class="bg-white border-gray-200 p-9 flex justify-end">
           <div class="flex items-center space-x-3">
             <div
               class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 overflow-hidden"
@@ -120,7 +120,7 @@
 
             <div
               class="flex items-center justify-center text-blue-600 font-bold relative cursor-pointer"
-              @click="isPopoverOpen = !isPopoverOpen"
+              @click="togglePopover"
             >
               <div class="flex items-center justify-center relative">
                 <div
@@ -145,29 +145,31 @@
                 </div>
                 <img src="/icons/hrm-icon.png" alt="HRMIS" class="w-full h-full object-cover" />
               </div>
-              <div
-                v-if="isPopoverOpen"
-                class="absolute top-12 right-0 bg-white shadow-lg rounded-lg p-4 w-[400px] h-[500px] overflow-y-auto z-40 rounded-md"
-              >
-                <div class="grid grid-cols-4 gap-4">
-                  <div
-                    v-for="(item, index) in popoverItems"
-                    :key="index"
-                    class="flex flex-col items-center cursor-pointer"
-                    :class="{ 'bg-blue-100': focusedItem === index }"
-                    @click="focusedItem = index"
-                  >
+              <transition name="zoom">
+                <div
+                  v-if="isPopoverOpen"
+                  class="absolute top-12 right-0 bg-[#ffffff] shadow-lg p-4 w-[400px] h-[500px] overflow-y-auto z-40 rounded-md"
+                >
+                  <div class="grid grid-cols-4 gap-4">
                     <div
-                      class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden"
+                      v-for="(item, index) in popoverItems"
+                      :key="index"
+                      class="flex flex-col items-center cursor-pointer"
+                      :class="{ 'bg-blue-100': focusedItem === index }"
+                      @click="focusedItem = index"
                     >
-                      <img :src="item.icon" alt="icon" class="w-full h-full object-cover" />
+                      <div
+                        class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden"
+                      >
+                        <img :src="item.icon" alt="icon" class="w-full h-full object-cover" />
+                      </div>
+                      <p class="text-xs text-center mt-2 font-normal text-gray-500">
+                        {{ item.text }}
+                      </p>
                     </div>
-                    <p class="text-xs text-center mt-2 font-normal text-gray-500">
-                      {{ item.text }}
-                    </p>
                   </div>
                 </div>
-              </div>
+              </transition>
             </div>
           </div>
         </header>
@@ -335,7 +337,7 @@
 
 <script setup lang="ts">
 import { PerfectScrollbar } from "vue3-perfect-scrollbar";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 const isPopoverOpen = ref(false);
 const focusedItem = ref<number | null>(null);
@@ -413,8 +415,38 @@ const menuItems = ref([
   },
 ]);
 
+const currentTime = ref("");
+
+function updateTime() {
+  const now = new Date();
+  currentTime.value = now.toLocaleString("en-US", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  });
+}
+
+onMounted(() => {
+  updateTime();
+  setInterval(updateTime, 1000); // Update every second
+});
+
 function selectMenu(menu: string) {
   selectedMenu.value = selectedMenu.value === menu ? null : menu;
+}
+
+function togglePopover() {
+  if (isPopoverOpen.value) {
+    isPopoverOpen.value = false;
+  } else {
+    setTimeout(() => {
+      isPopoverOpen.value = true;
+    }, 10); // Delay to ensure transition is applied
+  }
 }
 </script>
 
@@ -423,5 +455,19 @@ function selectMenu(menu: string) {
 
 .ps {
   max-height: 80vh; /* or height: 100px; */
+}
+
+.zoom-enter-active,
+.zoom-leave-active {
+  transition: transform 0.3s ease;
+}
+.zoom-enter {
+  transform: scale(0.9); /* Ensure this is applied for zoom-in */
+}
+.zoom-enter-to {
+  transform: scale(1); /* Transition to the default scale */
+}
+.zoom-leave-to {
+  transform: scale(0.9); /* Zoom out effect */
 }
 </style>
