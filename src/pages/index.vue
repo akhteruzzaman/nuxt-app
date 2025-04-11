@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="flex h-screen">
-      <!-- Sidebar -->            
-       
-        <!-- User Info -->
-        <div class="w-64 bg-white">  
+      <!-- Sidebar -->
+
+      <!-- User Info -->
+      <div class="w-64 bg-white">
         <div class="p-4 border-b border-gray-200 text-center">
           <h2 class="font-bold text-sm text-gray-500">AHMAD BIN ABU BAKAR</h2>
           <p class="font-bold text-sm text-gray-500">PENOLONG TEKNOLOGI</p>
@@ -186,79 +186,87 @@
         <!-- Top Navigation -->
         <header class="bg-white border-b border-gray-200 p-4 flex justify-end">
           <div class="flex items-center space-x-3">
-
             <div
               class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 overflow-hidden"
             >
-              <img 
-                src="/icons/profile.png" 
-                alt="Icon" 
-                class="w-10 h-10 object-contain"
-              />
+              <img src="/icons/profile.png" alt="Icon" class="w-10 h-10 object-contain" />
             </div>
 
             <div
               class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500"
             >
-              <svg 
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 aria-hidden="true"
                 role="img"
                 tag="i"
                 class="v-icon notranslate v-theme--light v-icon--size-default iconify iconify--bx"
-                width="2em" height="2em" viewBox="0 0 24 24"
-              >
-              <path fill="currentColor" d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223l-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044L20.002 18H4z"></path>
-              </svg>
-            </div>
-
-            <div
-              class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500"
-            >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                aria-hidden="true"
-                role="img"
-                tag="i"
-                class="v-icon notranslate v-theme--light v-icon--size-default iconify iconify--bx"
-                width="2em" height="2em" viewBox="0 0 24 24"
-              >
-              <path fill="currentColor" d="M21.928 11.607c-.202-.488-.635-.605-.928-.633V8c0-1.103-.897-2-2-2h-6V4.61c.305-.274.5-.668.5-1.11a1.5 1.5 0 0 0-3 0c0 .442.195.836.5 1.11V6H5c-1.103 0-2 .897-2 2v2.997l-.082.006A1 1 0 0 0 1.99 12v2a1 1 0 0 0 1 1H3v5c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5a1 1 0 0 0 1-1v-1.938a1.006 1.006 0 0 0-.072-.455zM5 20V8h14l.001 3.996L19 12v2l.001.005l.001 5.995H5z"></path><ellipse cx="8.5" cy="12" fill="currentColor" rx="1.5" ry="2"></ellipse><ellipse cx="15.5" cy="12" fill="currentColor" rx="1.5" ry="2"></ellipse><path fill="currentColor" d="M8 16h8v2H8z"></path>
-              </svg>
-            </div>
-
-            <div
-              class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500"
-            >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                aria-hidden="true"
-                role="img"
-                tag="i"
-                class="v-icon notranslate v-theme--light v-icon--size-default iconify iconify--bx"
-                width="2em" height="2em" viewBox="0 0 24 24"
+                width="2em"
+                height="2em"
+                viewBox="0 0 24 24"
               >
                 <path
-                  d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm0 10h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm7.293-14.707l-3.586-3.586a.999.999 0 0 0-1.414 0l-3.586 3.586a.999.999 0 0 0 0 1.414l3.586 3.586a.999.999 0 0 0 1.414 0l3.586-3.586a.999.999 0 0 0 0-1.414z"
                   fill="currentColor"
-                />
+                  d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223l-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044L20.002 18H4z"
+                ></path>
               </svg>
             </div>
 
-            
             <div
-              class=" flex items-center justify-center text-blue-600 font-bold relative"
+              class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                role="img"
+                tag="i"
+                class="v-icon notranslate v-theme--light v-icon--size-default iconify iconify--bx"
+                width="2em"
+                height="2em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M21.928 11.607c-.202-.488-.635-.605-.928-.633V8c0-1.103-.897-2-2-2h-6V4.61c.305-.274.5-.668.5-1.11a1.5 1.5 0 0 0-3 0c0 .442.195.836.5 1.11V6H5c-1.103 0-2 .897-2 2v2.997l-.082.006A1 1 0 0 0 1.99 12v2a1 1 0 0 0 1 1H3v5c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5a1 1 0 0 0 1-1v-1.938a1.006 1.006 0 0 0-.072-.455zM5 20V8h14l.001 3.996L19 12v2l.001.005l.001 5.995H5z"
+                ></path>
+                <ellipse cx="8.5" cy="12" fill="currentColor" rx="1.5" ry="2"></ellipse>
+                <ellipse cx="15.5" cy="12" fill="currentColor" rx="1.5" ry="2"></ellipse>
+                <path fill="currentColor" d="M8 16h8v2H8z"></path>
+              </svg>
+            </div>
+
+            <div
+              class="flex items-center justify-center text-blue-600 font-bold relative cursor-pointer"
               @click="isPopoverOpen = !isPopoverOpen"
             >
-            <img src="/icons/hrm-icon.png" alt="HRMIS" class="w-full h-full object-cover" />
-
-              
+              <div class="flex items-center justify-center relative">
+                <div
+                  class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                    role="img"
+                    tag="i"
+                    class="v-icon notranslate v-theme--light v-icon--size-default iconify iconify--bx"
+                    width="2em"
+                    height="2em"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm0 10h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm7.293-14.707l-3.586-3.586a.999.999 0 0 0-1.414 0l-3.586 3.586a.999.999 0 0 0 0 1.414l3.586 3.586a.999.999 0 0 0 1.414 0l3.586-3.586a.999.999 0 0 0 0-1.414z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <img src="/icons/hrm-icon.png" alt="HRMIS" class="w-full h-full object-cover" />
+              </div>
               <div
                 v-if="isPopoverOpen"
-                class="absolute top-12 right-0 bg-white shadow-lg rounded-lg p-4 w-[400px] h-[500px] overflow-y-auto z-40"
+                class="absolute top-12 right-0 bg-white shadow-lg rounded-lg p-4 w-[400px] h-[500px] overflow-y-auto z-40 rounded-md"
               >
                 <div class="grid grid-cols-4 gap-4">
                   <div
@@ -273,12 +281,13 @@
                     >
                       <img :src="item.icon" alt="icon" class="w-full h-full object-cover" />
                     </div>
-                    <p class="text-sm text-center mt-2 font-normal text-gray-500">{{ item.text }}</p>
+                    <p class="text-sm text-center mt-2 font-normal text-gray-500">
+                      {{ item.text }}
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </header>
 
@@ -485,11 +494,8 @@ const popoverItems = ref([
   { icon: "/icons/topbar/32.png", text: "Dashboard dan Analitik" },
   { icon: "/icons/topbar/33.png", text: "Sistem Share Online" },
   { icon: "/icons/topbar/34.png", text: "Aplikasi Mudah Alih" },
-  
 ]);
 </script>
-
-
 
 <style scoped>
 @import "vue3-perfect-scrollbar/style.css";
