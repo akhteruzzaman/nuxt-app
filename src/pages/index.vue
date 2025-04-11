@@ -22,7 +22,7 @@
             <div class="relative mx-2 rounded-md">
               <a
                 href="#"
-                class="flex items-center px-4 py-3 bg-indigo-100 text-indigo-700 rounded-md mr-3"
+                class="flex items-center px-4 py-3 bg-indigo-100 text-indigo-700 rounded-md mr-3 text-sm"
               >
                 <span class="mr-2 text-indigo-600">
                   <svg
@@ -43,7 +43,10 @@
               />
             </div>
 
-            <a href="#" class="flex items-center px-6 py-3 text-gray-700 hover:bg-indigo-100">
+            <a
+              href="#"
+              class="flex items-center px-6 py-3 text-gray-700 hover:bg-indigo-100 text-sm"
+            >
               <span class="mr-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -61,8 +64,8 @@
 
             <a
               href="#"
-              class="flex items-center justify-between px-6 py-3 text-gray-700 hover:bg-indigo-100"
-              @click.prevent="isProfilOpen = !isProfilOpen"
+              class="flex items-center justify-between px-6 py-3 text-gray-700 hover:bg-indigo-100 text-sm"
+              @click.prevent="toggleSubMenu('profil')"
             >
               <div class="flex items-center">
                 <span class="mr-2">
@@ -95,87 +98,49 @@
                 </svg>
               </span>
             </a>
-            <div v-if="isProfilOpen" class="ml-6">
+            <div v-if="openSubMenu === 'profil'" class="ml-6">
               <a href="#" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100">Test 1</a>
               <a href="#" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100">Test 2</a>
             </div>
 
-            <div class="bg-gray-100">
-              <a
-                href="#"
-                class="flex items-center justify-between px-6 py-3 text-gray-700 hover:bg-indigo-100"
-              >
-                <div class="flex items-center">
-                  <span class="mr-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
-                      />
-                    </svg>
-                  </span>
-                  Rekod dan Peperiksaan
-                </div>
-                <span>
+            <a
+              href="#"
+              class="flex items-center justify-between px-6 py-3 text-gray-700 hover:bg-indigo-100 text-sm"
+              @click.prevent="toggleSubMenu('rekod')"
+            >
+              <div class="flex items-center">
+                <span class="mr-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-4 w-4"
+                    class="h-5 w-5"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
                     <path
-                      fill-rule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
+                      d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
                     />
                   </svg>
                 </span>
-              </a>
-            </div>
-
-            <a href="#" class="flex items-center px-6 py-3 text-gray-700 hover:bg-indigo-100 ml-6">
-              Rekod Peperiksaan
+                Rekod dan Peperiksaan
+              </div>
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </span>
             </a>
-
-            <div class="bg-gray-100">
-              <a
-                href="#"
-                class="flex items-center justify-between px-6 py-3 text-gray-700 hover:bg-indigo-100"
-              >
-                <div class="flex items-center">
-                  <span class="mr-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
-                      />
-                    </svg>
-                  </span>
-                  Rekod dan Peperiksaan
-                </div>
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-4 w-4"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-              </a>
+            <div v-if="openSubMenu === 'rekod'" class="ml-6">
+              <a href="#" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100">Rekod 1</a>
+              <a href="#" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100">Rekod 2</a>
             </div>
           </PerfectScrollbar>
         </div>
@@ -247,7 +212,7 @@
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns:xlink="http://www.w3.org/2000/xlink"
                     aria-hidden="true"
                     role="img"
                     tag="i"
@@ -456,7 +421,6 @@
 import { PerfectScrollbar } from "vue3-perfect-scrollbar";
 import { ref } from "vue";
 
-const isProfilOpen = ref(false);
 const isPopoverOpen = ref(false);
 const focusedItem = ref<number | null>(null);
 const popoverItems = ref([
@@ -495,6 +459,12 @@ const popoverItems = ref([
   { icon: "/icons/topbar/33.png", text: "Sistem Share Online" },
   { icon: "/icons/topbar/34.png", text: "Aplikasi Mudah Alih" },
 ]);
+
+const openSubMenu = ref<string | null>(null);
+
+function toggleSubMenu(menu: string) {
+  openSubMenu.value = openSubMenu.value === menu ? null : menu;
+}
 </script>
 
 <style scoped>

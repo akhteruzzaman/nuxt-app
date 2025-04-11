@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@utility text-* {
+  font-size: --value(--text- *, [24px]);
+  line-height: --modifier(--leading- *, [24px], [ *]);
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: #eef0fd;
