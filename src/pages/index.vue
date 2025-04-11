@@ -272,11 +272,17 @@
                       />
                     </svg>
                   </div>
+                  
                   <select
-                    class="pl-10 pr-10 py-2 border border-gray-300 rounded-md w-full appearance-none focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    class="pl-10 pr-10 py-2 border border-gray-300 rounded-md w-full appearance-none focus:outline-none focus:ring-1 focus:ring-blue-500 text-gray-400 transition-all duration-300 ease-in-out"
+                    @focus="open = true"
+                    @blur="open = false"
                   >
-                    <option>SEMAKAN BPO</option>
+                    <option class="text-gray-500">SEMAKAN BPO</option>
+                    <option class="text-gray-500">DALAM PROSES</option>
+                    <option class="text-gray-500">SELESAI</option>
                   </select>
+
                   <div
                     class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400"
                   >
